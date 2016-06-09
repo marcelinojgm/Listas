@@ -6,9 +6,22 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ListasReaderDbHelper extends SQLiteOpenHelper {
 
-    private static final String TEXT_TYPE = " TEXT";
+
     private static final String INTEGER_TYPE = " INTEGER";
+    private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA_SEP = ",";
+    private static final String SQL_CREATE_TABLA_LISTAS =
+            "CREATE TABLE " + Tabla.ColumnasLista.NAME_TABLE + " (" +
+                    Tabla.ColumnasLista.ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COMMA_SEP +
+                    Tabla.ColumnasLista.TITULO + TEXT_TYPE + COMMA_SEP +
+                    " )";
+    private static final String SQL_CREATE_TABLA_ELEMENTOS =
+            "CREATE TABLE " + Tabla.ColumnasLista.NAME_TABLE + " (" +
+                    Tabla.ColumnasElemento.ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COMMA_SEP +
+                    Tabla.ColumnasElemento.ID_LISTA + TEXT_TYPE + COMMA_SEP +
+                    Tabla.ColumnasElemento.TEXTO + TEXT_TYPE + COMMA_SEP +
+                    Tabla.ColumnasElemento.VERIFICADO + INTEGER_TYPE + COMMA_SEP +
+                    " )";
 
     public ListasReaderDbHelper(Context context, String name,
                                 SQLiteDatabase.CursorFactory factory, int version) {
@@ -17,15 +30,8 @@ public class ListasReaderDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        private static final String TEXT_TYPE = " TEXT";
-        private static final String COMMA_SEP = ",";
-        private static final String SQL_CREATE_ENTRIES =
-                "CREATE TABLE " + Tabla.ColumnasLista.TABLE_NAME + " (" +
-                        FeedEntry._ID + " INTEGER PRIMARY KEY," +
-                        FeedEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + COMMA_SEP +
-                        FeedEntry.COLUMN_NAME_TITLE + TEXT_TYPE + COMMA_SEP +
-        ... // Any other options for the CREATE command
-        " )";
+        
+
     }
 
     @Override

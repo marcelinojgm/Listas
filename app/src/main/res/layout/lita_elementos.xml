@@ -23,5 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:contentDescription="@string/delete_element"
         android:src="@android:drawable/ic_notification_clear_all" />
 </RelativeLayout>
