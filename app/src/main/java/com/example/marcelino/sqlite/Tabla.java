@@ -5,9 +5,10 @@ package com.example.marcelino.sqlite;
  */
 public class Tabla {
     interface ColumnasLista{
+        String NAME_TABLE = "listas";
         static String ID = "id";
         String TITULO = "titulo";
-        String NAME_TABLE = "listas";
+
     }
 
     interface ColumnasElemento {
