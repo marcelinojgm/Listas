@@ -21,20 +21,20 @@ public class ListasReaderDbHelper extends SQLiteOpenHelper {
 
     //listas
     private static final String SQL_CREATE_TABLA_LISTAS =
-            "CREATE TABLE " + Tabla.ColumnasLista.NAME_TABLE +
+            "CREATE TABLE " + Tabla.TablaLista.NAME_TABLE +
                     " (" +
-                    Tabla.ColumnasLista.ID + INTEGER_KEY + COMMA_SEP +
-                    Tabla.ColumnasLista.TITULO + TEXT_TYPE + COMMA_SEP +
+                    Tabla.TablaLista.ID + INTEGER_KEY + COMMA_SEP +
+                    Tabla.TablaLista.TITULO + TEXT_TYPE + COMMA_SEP +
                     " )";
 
     //elementos
     private static final String SQL_CREATE_TABLA_ELEMENTOS =
-            "CREATE TABLE " + Tabla.ColumnasLista.NAME_TABLE +
+            "CREATE TABLE " + Tabla.TablaLista.NAME_TABLE +
                     " (" +
-                    Tabla.ColumnasElemento.ID + INTEGER_KEY + COMMA_SEP +
-                    Tabla.ColumnasElemento.ID_LISTA + INTEGER_TYPE + COMMA_SEP +
-                    Tabla.ColumnasElemento.TEXTO + TEXT_TYPE + COMMA_SEP +
-                    Tabla.ColumnasElemento.VERIFICADO + INTEGER_TYPE + COMMA_SEP +
+                    Tabla.TablaElemento.ID + INTEGER_KEY + COMMA_SEP +
+                    Tabla.TablaElemento.ID_LISTA + INTEGER_TYPE + COMMA_SEP +
+                    Tabla.TablaElemento.TEXTO + TEXT_TYPE + COMMA_SEP +
+                    Tabla.TablaElemento.VERIFICADO + INTEGER_TYPE + COMMA_SEP +
                     " )";
 
     public ListasReaderDbHelper(Context context, String name,
@@ -52,8 +52,8 @@ public class ListasReaderDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(DROP_TABLE + Tabla.ColumnasElemento.NAME_TABLE);
-        db.execSQL(DROP_TABLE + Tabla.ColumnasLista.NAME_TABLE);
+        db.execSQL(DROP_TABLE + Tabla.TablaElemento.NAME_TABLE);
+        db.execSQL(DROP_TABLE + Tabla.TablaLista.NAME_TABLE);
         onCreate(db);
     }
 }
